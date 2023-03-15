@@ -10,8 +10,7 @@ What is Regex? Regex, also know as Regular Expressions, is a sequence of charact
 /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 ```
 
-
-
+So why use regex? Regex allows coders to verify that a string (like email) matches basic validation characters. Regex is universal and can be used in any search to define the characters of a string. 
 
 ## Table of Contents
 
@@ -28,6 +27,38 @@ What is Regex? Regex, also know as Regular Expressions, is a sequence of charact
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
+
+Let's look back at our email Regex and break it down by component. 
+
+```
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+```
+
+To start, a regex must be wrapped between the character `/` because it is considered a literal (a notion for representing a fixed value in source code). For the email regex, we can break it down by letters, numbers, and characters. 
+after `/^` we see the first part of the regex 
+
+```
+([a-z0-9+\.-])
+```
+This is stating that the first part of you email address can contain the following:
+ - letters a through z
+ - Numbers 0 through 9
+ - characters **
+
+The `+` separates like any coded string and the `@` indicates `@` symbol of an email. 
+
+** figure out what the symbols mean and explain the rest
+
+The final piece of the email:
+
+```
+([a-z\.]{2,6})
+```
+Similar to the first part states the following:
+ - letters a-z
+ - character limit between 2 and 6
+
+
 
 ### Anchors
 
