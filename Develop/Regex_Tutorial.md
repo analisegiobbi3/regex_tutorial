@@ -62,6 +62,18 @@ Similar to the first part states the following:
 
 ### Anchors
 
+In this (and any) regex expression, you will see anchor characters. Anchors are used to specify where the string begins. The symbols `^` and `$` are anchors and you can see these at the very start and end of our express:
+
+```
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+```
+`^` signifies the start of the string and `$` represents the end. In our email express, we know that our full sequence must fulfill the requirements of containing the following characters because they are within the anchors of the expression:
+
+```
+[a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]
+```
+
+
 ### Quantifiers
 
 ### OR Operator
@@ -84,4 +96,7 @@ Similar to the first part states the following:
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+About Me:
+
+I am a Software Release Manager interested in full stack development. I am interested in learning about technologies and concepts like the one described above. For inquiries, please contact analise.giobbi@gc.com or visit my github, linked below.
+![Github](https://github.com/analisegiobbi3)
