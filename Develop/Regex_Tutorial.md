@@ -1,10 +1,17 @@
-# Title (replace with your title)
+# Regex Tutorial
 
-Introductory paragraph (replace this with your text)
+In this tutorial, I will explain the concept of Regex in relation to Email addresses. I will be breaking down each part of this Regex expression and describing what it does and how it is relevant. 
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+What is Regex? Regex, also know as Regular Expressions, is a sequence of character that are used to define a search pattern for text. Historically, regex comes from a mathematical expression called regular sets, but for our purposes, they are used to define a search pattern in a body of text. For this tutorial, I will be explaining the Regex of an email address. Below is a look at the regex for email addresses. 
+
+```
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+```
+
+
+
 
 ## Table of Contents
 
