@@ -73,8 +73,47 @@ In this (and any) regex expression, you will see anchor characters. Anchors are 
 [a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]
 ```
 
+### Bracket Expressions
+
+Now that we know where our string starts, let's talk about what is in between the brackets. Be briefly went over this in the contents section, but we will dive into more details. 
+
+our first section of brackets contains the qualifying characters for the part of an email address before the `@`.
+
+```
+[a-z0-9_\.-]
+```
+
+ 1. We can use lower case letters between a and z. upper case cannot be used because they are not specified.
+ 2. We can use numbers between 0 and 9
+ 3. We can use the following special characters, `_`, `\`, `.`, `-`
+
+Our second set of brackets lets up know what we can have in the part of our email after the `@`.
+
+```
+[\da-z\.-]
+```
+ 1. We can have any digit to start our string, ad indicated by the `\d`
+ 2. We can use any lower case letters between a and z
+ 3. We can use the following special characters, `_`, `.`, `-`
+
+Our final set of brackets let you know what you can have in the final part of the email address after the `.`
+
+```
+[a-z\.]
+```
+ 1. We can use any lower case letters between a and z
+ 2. we can use a `.` as our special character 
+
 
 ### Quantifiers
+
+Quantifiers are exactly how they sound. These are limits that can be set for your string. They can be set for the string as a whole or for sections of the string. For our email regex, the quantifier is set for the last character of the string. 
+
+```
+([a-z\.]{2,6})
+```
+
+You will note that the first part of our email is not limited by our quantifier. However, we are only allowing emails to have between 2 and 6 characters in their final part of the email address. 
 
 ### OR Operator
 
@@ -84,7 +123,7 @@ In this (and any) regex expression, you will see anchor characters. Anchors are 
 
 ### Grouping and Capturing
 
-### Bracket Expressions
+
 
 ### Greedy and Lazy Match
 
