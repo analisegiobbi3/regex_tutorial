@@ -115,23 +115,34 @@ Quantifiers are exactly how they sound. These are limits that can be set for you
 
 You will note that the first part of our email is not limited by our quantifier. However, we are only allowing emails to have between 2 and 6 characters in their final part of the email address. 
 
-### OR Operator
 
 ### Character Classes
 
-### Flags
+Character classes are defined as a set of characters that can occur within a string to fulfill a match. For example, our email expression contains several character classes: 
 
-### Grouping and Capturing
+```
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+```
+ 1. `.` matches any character except for the character to set a new line `\n`
+ 2. `\d` is another way of stating the `0-9` numeric qualifier
 
 
+### Character Escapes
+
+Our expression uses a character escape in serveral parts:
+```
+[\da-z\.-]
+```
+and
+
+```
+[a-z\.]
+```
+
+The `\` is a character escape. In regex, this means it is a character that is not interpreted literally. In the two cases above, this escape character is noting that we should look for the `.` or `-` in the first expression or the `.` in the second expression. 
 
 ### Greedy and Lazy Match
 
-### Boundaries
-
-### Back-references
-
-### Look-ahead and Look-behind
 
 ## Author
 
