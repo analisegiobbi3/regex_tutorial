@@ -14,17 +14,13 @@ So why use regex? Regex allows coders to verify that a string (like email) match
 
 ## Table of Contents
 
+- [Regex Components](#regex-components)
 - [Anchors](#anchors)
-- [Quantifiers](#quantifiers)
-- [OR Operator](#or-operator)
-- [Character Classes](#character-classes)
-- [Flags](#flags)
-- [Grouping and Capturing](#grouping-and-capturing)
 - [Bracket Expressions](#bracket-expressions)
-- [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Boundaries](#boundaries)
-- [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
+- [Quantifiers](#quantifiers)
+- [Character Classes](#character-classes)
+- [Character Escapes](#character-escapes)
+- [Conclusion](#conclusion)
 
 ## Regex Components
 
@@ -38,16 +34,14 @@ To start, a regex must be wrapped between the character `/` because it is consid
 after `/^` we see the first part of the regex 
 
 ```
-([a-z0-9+\.-])
+([a-z0-9_\.-])
 ```
 This is stating that the first part of you email address can contain the following:
  - letters a through z
  - Numbers 0 through 9
- - characters **
+ - characters `_`, `\`, `.`, `-`
 
 The `+` separates like any coded string and the `@` indicates `@` symbol of an email. 
-
-** figure out what the symbols mean and explain the rest
 
 The final piece of the email:
 
@@ -57,6 +51,8 @@ The final piece of the email:
 Similar to the first part states the following:
  - letters a-z
  - character limit between 2 and 6
+
+In the following sections, I will break these pieces of the regex down in detail.
 
 
 
@@ -75,9 +71,9 @@ In this (and any) regex expression, you will see anchor characters. Anchors are 
 
 ### Bracket Expressions
 
-Now that we know where our string starts, let's talk about what is in between the brackets. Be briefly went over this in the contents section, but we will dive into more details. 
+Now that we know where our string starts, let's talk about what is in between the brackets. We briefly went over this in the contents section, but we will dive into more details. 
 
-our first section of brackets contains the qualifying characters for the part of an email address before the `@`.
+Our first section of brackets contains the qualifying characters for the part of an email address before the `@`.
 
 ```
 [a-z0-9_\.-]
@@ -92,7 +88,7 @@ Our second set of brackets lets up know what we can have in the part of our emai
 ```
 [\da-z\.-]
 ```
- 1. We can have any digit to start our string, ad indicated by the `\d`
+ 1. We can have any digit to start our string, as indicated by the `\d`
  2. We can use any lower case letters between a and z
  3. We can use the following special characters, `_`, `.`, `-`
 
@@ -129,7 +125,7 @@ Character classes are defined as a set of characters that can occur within a str
 
 ### Character Escapes
 
-Our expression uses a character escape in serveral parts:
+Our expression uses a character escape in several parts:
 ```
 [\da-z\.-]
 ```
@@ -141,8 +137,9 @@ and
 
 The `\` is a character escape. In regex, this means it is a character that is not interpreted literally. In the two cases above, this escape character is noting that we should look for the `.` or `-` in the first expression or the `.` in the second expression. 
 
-### Greedy and Lazy Match
+### Conclusion
 
+In conclusion, regular expressions are an important part of coding for patterns and can be helpful in validation for different strings.
 
 ## Author
 
